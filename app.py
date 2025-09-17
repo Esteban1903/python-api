@@ -45,3 +45,5 @@ def add_day():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+#Se agrego Post y Get 
