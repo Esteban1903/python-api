@@ -42,5 +42,6 @@ def add_day():
     return jsonify({"message": "Día agregado", "day": new_day}), 201
 
 
+
 if __name__ == "__main__":
     app.run(debug=True)
