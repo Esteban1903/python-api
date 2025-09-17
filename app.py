@@ -25,10 +25,21 @@ def get_day(day_id):
         abort(404)
     return jsonify({"day": day[0]})
 
-
 @app.route("/", methods=["POST"])
 def post_days():
     return jsonify({"success": True}), 201
+
+# NUEVO GET:
+@app.route("/status", methods=["GET"])
+def get_status():
+    return jsonify({"status": "API funcionando correctamente"})
+
+# NUEVO POST:
+@app.route("/add-day", methods=["POST"])
+def add_day():
+    new_day = {"id": len(days) + 1, "name": "Nuevo día"}
+    days.append(new_day)
+    return jsonify({"message": "Día agregado", "day": new_day}), 201
 
 
 if __name__ == "__main__":
